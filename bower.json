@@ -6,7 +6,7 @@
     "alexanderbeletsky <alexander.beletsky@gmail.com>"
   ],
   "description": "Angular.js component for stylish and flexible application notifications.",
-  "main": "src/ng-notifications-bar.js",
+  "main": "dist/ngNotificationsBar.min.js",
   "moduleType": [
     "globals"
   ],

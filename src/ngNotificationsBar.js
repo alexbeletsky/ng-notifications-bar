@@ -3,7 +3,7 @@
 
 	module.provider('ngNotificationsBar', function () {
 		this.$get = function () {
-
+			return this;
 		};
 	});
 

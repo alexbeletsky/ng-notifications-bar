@@ -7,15 +7,12 @@ module.exports = function (grunt) {
 			},
 			main: {
 				files: {
-					'./src/ngNotificationsBar.min.js': ['./src/ngNotificationsBar.js']
+					'./dist/ngNotificationsBar.min.js': ['./src/ngNotificationsBar.js']
 				}
 			}
 		},
 		jshint: {
-			options: {
-				ignores: ['./src/ngNotificationsBar.min.js']
-			},
-			files: ['*.js']
+			files: ['src/*.js']
 		},
 		compass: {
 			dev: {
@@ -31,8 +28,18 @@ module.exports = function (grunt) {
 			},
 			minify:{
 				files: {
-					'css/ngNotificationsBar.min.css': ['css/ngNotificationsBar.css']
+					'dist/ngNotificationsBar.min.css': ['css/ngNotificationsBar.css']
 				}
+			}
+		},
+		watch: {
+			src: {
+				files: 'src/*.js',
+				tasks: ['jshint', 'uglify']
+			},
+			sass: {
+				files: 'sass/*.scss',
+				tasks: ['compass', 'cssmin']
 			}
 		}
 	});
@@ -42,8 +49,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
-	grunt.registerTask('css', ['compass']);
+	grunt.registerTask('sass', ['compass', 'cssmin']);
+	grunt.registerTask('build', ['jshint', 'uglify', 'compass', 'cssmin']);
 };
