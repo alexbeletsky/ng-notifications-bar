@@ -16,6 +16,24 @@ module.exports = function (grunt) {
 				ignores: ['./src/ngNotificationsBar.min.js']
 			},
 			files: ['*.js']
+		},
+		compass: {
+			dev: {
+				options: {
+					sassDir: 'sass',
+					cssDir: 'css',
+				}
+			}
+		},
+		cssmin: {
+			options: {
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> (<%= pkg.homepage %>) */\n'
+			},
+			minify:{
+				files: {
+					'css/ngNotificationsBar.min.css': ['css/ngNotificationsBar.css']
+				}
+			}
 		}
 	});
 
@@ -27,5 +45,5 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
-	grunt.registerTask('css', ['compass', 'cssmin']);
+	grunt.registerTask('css', ['compass']);
 };
