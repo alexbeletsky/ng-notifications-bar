@@ -40,6 +40,20 @@ angular.module('app', ['ngNotificationsBar']);
 
 ## API
 
+The module consists of there elements - directive, service and provider.
+
+### Directive
+
+TDB.
+
+### Service
+
+TDB.
+
+### Provider
+
+TDB.
+
 ## Licence (MIT)
 
 Copyright (c) 2014, alexander.beletsky@gmail.com
