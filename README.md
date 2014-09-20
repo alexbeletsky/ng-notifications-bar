@@ -4,7 +4,7 @@
 
 ## Overview
 
-Web applications requires notify users of ongoing events. Common cases are errros, successful completion notifications etc. With `ng-notifications-bar` it's easy as,
+Web applications requires notify users of ongoing events. Common cases are errros, successful completion notifications etc. With `ng-notifications-bar` it's as easy as,
 
 ```html
 <body>
@@ -29,7 +29,7 @@ $ bower install angular-notifications-bar
 Update your scripts section or use the require for browserified applications.
 
 ```html
-	<script scr="bower_components/angular-notifications-bar/dist/angular-notifications-bar.min.js"></script>
+<script scr="bower_components/angular-notifications-bar/dist/angular-notifications-bar.min.js"></script>
 ```
 
 In application module,
@@ -44,15 +44,27 @@ The module consists of there elements - directive, service and provider.
 
 ### Directive
 
-TDB.
+`notifications-bar` element directive, should be placed once, typically righ after `<body>` open tag.
 
 ### Service
 
-TDB.
+`notification` service is used by controllers (or other directives), to show notifications.
+
+```js
+app.controllers('app', function ($scope, api, notification) {
+	api.get({resource: 'tasks'})
+		.then(function (tasks) {
+			$scope.tasks = tasks;
+		}, function (error) {
+			notification.showError({message: error.message});
+		})
+	});
+});
+```
 
 ### Provider
 
-TDB.
+`notificationConfigProvider` is used to override some notifications bar defaults.
 
 ## Licence (MIT)
 
