@@ -68,7 +68,6 @@ app.controllers('app', function ($scope, api, notification) {
 
 ```js
 app.config(['notificationConfigProvider'], function (notificationConfigProvider) {
-	
 	// predefined messages
 	notificationConfigProvider.setMessage('error', 'Sorry, something bad just happend. Please try it again.');
 	notificationConfigProvider.setMessage('success', 'Congrats! The operation completed successully.');
