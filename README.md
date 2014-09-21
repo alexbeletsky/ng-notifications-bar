@@ -1,6 +1,6 @@
 # ng-notifications-bar
 
-[Angular.js](https://angularjs.org/) component for stylish and flexible application notifications.
+[Angular.js](https://angularjs.org/), [Animate.css](http://daneden.github.io/animate.css) based component for stylish and flexible application notifications.
 
 ## Overview
 
@@ -65,6 +65,17 @@ app.controllers('app', function ($scope, api, notification) {
 ### Provider
 
 `notificationConfigProvider` is used to override some notifications bar defaults.
+
+```js
+app.config(['notificationConfigProvider'], function (notificationConfigProvider) {
+	
+	// predefined messages
+	notificationConfigProvider.setMessage('error', 'Sorry, something bad just happend. Please try it again.');
+	notificationConfigProvider.setMessage('success', 'Congrats! The operation completed successully.');
+
+	// animation config
+	notificationConfigProvider.animationMethod('fadeInDown')
+}])
 
 ## Licence (MIT)
 
