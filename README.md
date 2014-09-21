@@ -76,6 +76,7 @@ app.config(['notificationConfigProvider'], function (notificationConfigProvider)
 	// animation config
 	notificationConfigProvider.animationMethod('fadeInDown')
 }])
+```
 
 ## Licence (MIT)
 
