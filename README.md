@@ -17,13 +17,13 @@ Web applications requires notify users of ongoing events. Common cases are errro
 Npm installation,
 
 ```bash
-$ npm install angular-notifications-bar
+$ npm install angular-notifications-bar --save
 ```
 
 Or bower installation,
 
 ```bash
-$ bower install angular-notifications-bar
+$ bower install angular-notifications-bar --save
 ```
 
 Update your scripts section or use the require for browserified applications.
