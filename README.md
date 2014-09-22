@@ -46,6 +46,10 @@ The module consists of there elements - directive, service and provider.
 
 `notifications-bar` element directive, should be placed once, typically righ after `<body>` open tag.
 
+```html
+<notifications-bar class="notifications"></notifications-bar>
+```
+
 ### Service
 
 `notification` service is used by controllers (or other directives), to show notifications.
@@ -56,9 +60,17 @@ app.controllers('app', function ($scope, api, notification) {
 		.then(function (tasks) {
 			$scope.tasks = tasks;
 		}, function (error) {
-			notification.showError({message: error.message});
-		})
-	});
+			notification.showError({message: error.message});notification
+		});
+
+	$scope.submitTask = function () {
+		api.post({resouce: 'tasks'}, {description: this.description})
+			.then(function () {
+				notification.showSuccess({message: 'Your task posted successfully'});
+			}, function (error) {
+				notification.showError({message: 'Oh no! Task submition failed, please try again.'});
+			});
+	}
 });
 ```
 
