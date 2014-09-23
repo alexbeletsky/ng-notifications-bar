@@ -50,6 +50,12 @@ The module consists of there elements - directive, service and provider.
 <notifications-bar class="notifications"></notifications-bar>
 ```
 
+Possible to use as attribute, as well
+
+```html
+<div notifications-bar class="notifications"></div notifications-bar>
+```
+
 ### Service
 
 `notification` service is used by controllers (or other directives), to show notifications.
