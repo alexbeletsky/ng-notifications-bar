@@ -1,3 +1,6 @@
+@import "../bower_components/hmps-animate-scss/animate.scss";
+
 .notifications {
+	@include fadeInDown();
 	color: red;
 }
