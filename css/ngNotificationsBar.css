@@ -15,6 +15,7 @@ body {
 }
 /* line 14, ../sass/ngNotificationsBar.scss */
 .notifications .error {
+  position: relative;
   -webkit-animation: fadeInDown 1s ease 0.2s 1 both;
   -moz-animation: fadeInDown 1s ease 0.2s 1 both;
   animation: fadeInDown 1s ease 0.2s 1 both;
@@ -69,7 +70,7 @@ body {
     transform: translateY(0);
   }
 }
-/* line 21, ../sass/ngNotificationsBar.scss */
+/* line 22, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
   font-size: 10px;
   cursor: pointer;

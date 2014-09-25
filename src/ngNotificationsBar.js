@@ -31,8 +31,8 @@
 		return {
 			restrict: 'EA',
 			template: '\
-				<div class="container" ng-repeat="error in errors">\
-					<div class="{{error.type}}">\
+				<div class="container">\
+					<div class="{{error.type}}" ng-repeat="error in errors">\
 						{{error.message}}\
 						<span class="close-click" ng-click="close($index)">x</span>\
 					</div>\
@@ -43,6 +43,14 @@
 
 				scope.$on('notifications:error', function (event, data) {
 					errors.push({type: 'error', message: data});
+				});
+
+				scope.$on('notifications:warning', function (event, data) {
+					errors.push({type: 'warning', message: data});
+				});
+
+				scope.$on('notifications:success', function (event, data) {
+					errors.push({type: 'success', message: data});
 				});
 
 				scope.close = function (index) {

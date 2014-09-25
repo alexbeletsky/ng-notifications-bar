@@ -12,6 +12,7 @@
 	}
 
 	.error {
+		position: relative;
 		@include fadeInDown();
 		background-color: #F64747;
 		text-align: center;
