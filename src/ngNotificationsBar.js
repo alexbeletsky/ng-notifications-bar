@@ -32,29 +32,29 @@
 			restrict: 'EA',
 			template: '\
 				<div class="container">\
-					<div class="{{error.type}}" ng-repeat="error in errors">\
-						{{error.message}}\
+					<div class="{{note.type}}" ng-repeat="note in notifications">\
+						{{note.message}}\
 						<span class="close-click" ng-click="close($index)">x</span>\
 					</div>\
 				</div>\
 			',
 			link: function (scope) {
-				var errors = scope.errors = [];
+				var notifications = scope.notifications = [];
 
 				scope.$on('notifications:error', function (event, data) {
-					errors.push({type: 'error', message: data});
+					notifications.push({type: 'error', message: data});
 				});
 
 				scope.$on('notifications:warning', function (event, data) {
-					errors.push({type: 'warning', message: data});
+					notifications.push({type: 'warning', message: data});
 				});
 
 				scope.$on('notifications:success', function (event, data) {
-					errors.push({type: 'success', message: data});
+					notifications.push({type: 'success', message: data});
 				});
 
 				scope.close = function (index) {
-					errors.splice(index, 1);
+					notifications.splice(index, 1);
 				};
 			}
 		};

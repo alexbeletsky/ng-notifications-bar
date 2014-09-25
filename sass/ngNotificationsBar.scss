@@ -11,12 +11,26 @@
 		z-index: 1000;
 	}
 
-	.error {
+	.notification {
 		position: relative;
-		@include fadeInDown();
-		background-color: #F64747;
+		@include slideInDown();
 		text-align: center;
 		color: #fff;
+	}
+
+	.error {
+		@extend .notification;
+		background-color: #F64747;
+	}
+
+	.success {
+		@extend .notification;
+		background-color: green;
+	}
+
+	.warning {
+		@extend .notification;
+		background-color: yellow;
 	}
 
 	.close-click {

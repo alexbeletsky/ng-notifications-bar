@@ -14,55 +14,54 @@ body {
   z-index: 1000;
 }
 /* line 14, ../sass/ngNotificationsBar.scss */
-.notifications .error {
+.notifications .notification, .notifications .error, .notifications .success, .notifications .warning {
   position: relative;
-  -webkit-animation: fadeInDown 1s ease 0.2s 1 both;
-  -moz-animation: fadeInDown 1s ease 0.2s 1 both;
-  animation: fadeInDown 1s ease 0.2s 1 both;
+  -webkit-animation: slideInDown 1s ease 0.2s 1 both;
+  -moz-animation: slideInDown 1s ease 0.2s 1 both;
+  animation: slideInDown 1s ease 0.2s 1 both;
   -webkit-animation-backface-visibility: hidden;
   -moz-animation-backface-visibility: hidden;
   -ms-animation-backface-visibility: hidden;
   -o-animation-backface-visibility: hidden;
   animation-backface-visibility: hidden;
-  background-color: #F64747;
   text-align: center;
   color: #fff;
 }
-@-webkit-keyframes fadeInDown {
+@-webkit-keyframes slideInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-20px);
+    -webkit-transform: translateY(-2000px);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
 }
-@-moz-keyframes fadeInDown {
+@-moz-keyframes slideInDown {
   0% {
     opacity: 0;
-    -moz-transform: translateY(-20px);
+    -moz-transform: translateY(-2000px);
   }
   100% {
     opacity: 1;
     -moz-transform: translateY(0);
   }
 }
-@-o-keyframes fadeInDown {
+@-o-keyframes slideInDown {
   0% {
     opacity: 0;
-    -o-transform: translateY(-20px);
+    -o-transform: translateY(-2000px);
   }
   100% {
     opacity: 1;
     -o-transform: translateY(0);
   }
 }
-@keyframes fadeInDown {
+@keyframes slideInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
   }
   100% {
     opacity: 1;
@@ -70,7 +69,19 @@ body {
     transform: translateY(0);
   }
 }
-/* line 22, ../sass/ngNotificationsBar.scss */
+/* line 21, ../sass/ngNotificationsBar.scss */
+.notifications .error {
+  background-color: #F64747;
+}
+/* line 26, ../sass/ngNotificationsBar.scss */
+.notifications .success {
+  background-color: green;
+}
+/* line 31, ../sass/ngNotificationsBar.scss */
+.notifications .warning {
+  background-color: yellow;
+}
+/* line 36, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
   font-size: 10px;
   cursor: pointer;
