@@ -2,6 +2,7 @@
 <html ng-app="app">
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/ngNotificationsBar.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
 
 	<script src="../bower_components/angular/angular.js"></script>
 	<script src="../src/ngNotificationsBar.js"></script>
@@ -10,6 +11,8 @@
 <body ng-controller="main">
 	<ng-notifications-bar class="notifications"></ng-notifications-bar>
 
-	<button type="submit" ng-click="showError()">Show Error</button>
+	<div class="buttons">
+		<button type="submit" ng-click="showError()">Show Error</button>
+	</div>
 </body>
 </html>
