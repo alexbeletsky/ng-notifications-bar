@@ -28,7 +28,14 @@
 	}]);
 
 	module.directive('ngNotificationsBar', function () {
-
+		return {
+			restrict: 'EA',
+			link: function (scope) {
+				scope.$on('notifications:error', function (event, data) {
+					console.log(event, data);
+				});
+			}
+		};
 	});
 
 })(window, angular);
