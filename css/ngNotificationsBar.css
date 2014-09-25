@@ -3,8 +3,18 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 3, ../sass/ngNotificationsBar.scss */
-.notifications {
+/* line 4, ../sass/ngNotificationsBar.scss */
+.notifications .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 60px;
+  line-height: 60px;
+  width: 100%;
+  z-index: 1000;
+}
+/* line 14, ../sass/ngNotificationsBar.scss */
+.notifications .error {
   -webkit-animation: fadeInDown 1s ease 0.2s 1 both;
   -moz-animation: fadeInDown 1s ease 0.2s 1 both;
   animation: fadeInDown 1s ease 0.2s 1 both;
@@ -13,7 +23,9 @@ body {
   -ms-animation-backface-visibility: hidden;
   -o-animation-backface-visibility: hidden;
   animation-backface-visibility: hidden;
-  color: red;
+  background-color: #F64747;
+  text-align: center;
+  color: #fff;
 }
 @-webkit-keyframes fadeInDown {
   0% {
@@ -56,4 +68,11 @@ body {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+/* line 21, ../sass/ngNotificationsBar.scss */
+.notifications .close-click {
+  font-size: 10px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 auto;
 }

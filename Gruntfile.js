@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 		watch: {
 			src: {
 				files: 'src/*.js',
-				tasks: ['jshint', 'uglify']
+				tasks: ['uglify']
 			},
 			sass: {
 				files: 'sass/*.scss',
@@ -51,7 +51,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('sass', ['compass', 'cssmin']);
-	grunt.registerTask('build', ['jshint', 'uglify', 'compass', 'cssmin']);
+	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
+	grunt.registerTask('default', ['build']);
+
 };

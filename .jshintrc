@@ -41,7 +41,6 @@
 	"loopfunc": true,
 	"maxerr": false,
 	"moz": false,
-	"multistr": false,
 	"notypeof": false,
 	"proto": false,
 	"scripturl": false,
@@ -50,6 +49,7 @@
 	"supernew": false,
 	"validthis": false,
 	"noyield": false,
+	"multistr": true,
 
 	"browser": true,
 	"node": true,

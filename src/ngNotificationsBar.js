@@ -30,10 +30,24 @@
 	module.directive('ngNotificationsBar', function () {
 		return {
 			restrict: 'EA',
+			template: '\
+				<div class="container" ng-repeat="error in errors">\
+					<div class="{{error.type}}">\
+						{{error.message}}\
+						<span class="close-click" ng-click="close($index)">x</span>\
+					</div>\
+				</div>\
+			',
 			link: function (scope) {
+				var errors = scope.errors = [];
+
 				scope.$on('notifications:error', function (event, data) {
-					console.log(event, data);
+					errors.push({type: 'error', message: data});
 				});
+
+				scope.close = function (index) {
+					errors.splice(index, 1);
+				};
 			}
 		};
 	});
