@@ -7,17 +7,17 @@
 		};
 	});
 
-	module.factory('notifications', function () {
+	module.factory('notifications', ['$rootScope', function ($rootScope) {
 		var showError = function (message) {
-			console.log('error ' + message);
+			$rootScope.$broadcast('notifications:error', message);
 		};
 
 		var showWarning = function (message) {
-			console.log('warning' + message);
+			$rootScope.$broadcast('notifications:warning', message);
 		};
 
 		var showSuccess = function (message) {
-			console.log('success' + message);
+			$rootScope.$broadcast('notifications:success', message);
 		};
 
 		return {
@@ -25,9 +25,10 @@
 			showWarning: showWarning,
 			showSuccess: showSuccess
 		};
-	});
+	}]);
 
 	module.directive('ngNotificationsBar', function () {
 
 	});
+
 })(window, angular);
