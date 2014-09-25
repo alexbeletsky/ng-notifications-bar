@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
+	<link rel="stylesheet" type="text/css" href="../css/ngNotificationsBar.css">
+
 	<script src="../bower_components/angular/angular.js"></script>
-	<script src="../src/ng-notifications-bar.js"></script>
+	<script src="../src/ngNotificationsBar.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body>
+<body ng-controller="main">
+	<button type="submit" ng-click="showError()">Show Error</button>
 </body>
 </html>
