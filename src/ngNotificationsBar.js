@@ -27,7 +27,7 @@
 		};
 	}]);
 
-	module.directive('ngNotificationsBar', function () {
+	module.directive('notificationsBar', function () {
 		return {
 			restrict: 'EA',
 			template: '\
