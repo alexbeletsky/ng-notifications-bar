@@ -33,8 +33,8 @@
 			template: '\
 				<div class="container">\
 					<div class="{{note.type}}" ng-repeat="note in notifications">\
-						{{note.message}}\
-						<span class="close-click" ng-click="close($index)">x</span>\
+						<span class="message">{{note.message}}</span>\
+						<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
 					</div>\
 				</div>\
 			',

@@ -1,4 +1,5 @@
 @import "../bower_components/hmps-animate-scss/animate.scss";
+@import "glyphicons";
 
 .notifications {
 	.container {
@@ -15,7 +16,12 @@
 		position: relative;
 		@include slideInDown();
 		text-align: center;
+		font-size: 17px;
 		color: #fff;
+	}
+
+	.message {
+		padding: 0 12px;
 	}
 
 	.error {
@@ -34,7 +40,7 @@
 	}
 
 	.close-click {
-		font-size: 10px;
+		font-size: 12px;
 		cursor: pointer;
 		padding: 10px;
 		margin: 0 auto;
