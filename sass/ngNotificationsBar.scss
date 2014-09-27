@@ -14,9 +14,9 @@
 
 	.notification {
 		position: relative;
-		@include slideInDown();
+		@include fadeInDown();
 		text-align: center;
-		font-size: 17px;
+		font-size: 18px;
 		color: #fff;
 	}
 
@@ -31,7 +31,8 @@
 
 	.success {
 		@extend .notification;
-		background-color: #019875;
+		// #019875;
+		background-color: #03C9A9
 	}
 
 	.warning {
