@@ -25,12 +25,12 @@
 
 	.success {
 		@extend .notification;
-		background-color: green;
+		background-color: #019875;
 	}
 
 	.warning {
 		@extend .notification;
-		background-color: yellow;
+		background-color: #F7CA18;
 	}
 
 	.close-click {

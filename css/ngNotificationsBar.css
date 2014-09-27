@@ -75,11 +75,11 @@ body {
 }
 /* line 26, ../sass/ngNotificationsBar.scss */
 .notifications .success {
-  background-color: green;
+  background-color: #019875;
 }
 /* line 31, ../sass/ngNotificationsBar.scss */
 .notifications .warning {
-  background-color: yellow;
+  background-color: #F7CA18;
 }
 /* line 36, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
