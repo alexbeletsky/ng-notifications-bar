@@ -27,7 +27,7 @@
 		};
 	}]);
 
-	module.directive('notificationsBar', function () {
+	module.directive('notificationsBar', function ($timeout) {
 		return {
 			restrict: 'EA',
 			template: '\
@@ -40,9 +40,31 @@
 			',
 			link: function (scope) {
 				var notifications = scope.notifications = [];
+				var timers = [];
 
 				scope.$on('notifications:error', function (event, data) {
-					notifications.push({type: 'error', message: data});
+					var message, hide;
+
+					if (typeof data === 'object') {
+						message = data.message;
+						hide = data.hide;
+					} else {
+						message = data;
+					}
+
+
+					var id = 'notif_' + (Math.random() * 10 + 5000);
+					notifications.push({id: id, type: 'error', message: data});
+
+					if (hide) {
+						var timer = $timeout(function () {
+							// remove notification
+
+							// clear timeout
+						}, 1000);
+
+						timers.push({id: id, timer: timer});
+					}
 				});
 
 				scope.$on('notifications:warning', function (event, data) {
