@@ -1,6 +1,6 @@
 # ng-notifications-bar
 
-[Angular.js](https://angularjs.org/), [Animate.css](http://daneden.github.io/animate.css) based component for stylish and flexible application notifications.
+[Angular.js](https://angularjs.org/), [Animate.css](http://daneden.github.io/animate.css), [Glyphicons](http://glyphicons.com/), based component for stylish and flexible application notifications.
 
 ## Overview
 
