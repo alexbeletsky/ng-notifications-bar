@@ -52,18 +52,15 @@
 						message = data;
 					}
 
-
-					var id = 'notif_' + (Math.random() * 10 + 5000);
-					notifications.push({id: id, type: 'error', message: data});
+					var index = notifications.push({type: 'error', message: message});
 
 					if (hide) {
 						var timer = $timeout(function () {
 							// remove notification
-
+							notifications.splice(index - 1, 1);
 							// clear timeout
+							$timeout.cancel(timer);
 						}, 1000);
-
-						timers.push({id: id, timer: timer});
 					}
 				});
 
