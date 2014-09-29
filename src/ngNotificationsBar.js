@@ -43,7 +43,7 @@
 				var timers = [];
 				var defaultTimeout = 3000;
 
-				scope.$on('notifications:error', function (event, data) {
+				var notificationHandler = function (event, data, type) {
 					var message, hide;
 
 					if (typeof data === 'object') {
@@ -53,26 +53,29 @@
 						message = data;
 					}
 
-					var index = notifications.push({type: 'error', message: message});
+					var index = notifications.push({type: type, message: message});
 
 					if (hide) {
 						var timer = $timeout(function () {
 							// TODO: apply the animation
-
 							// remove notification
 							notifications.splice(index - 1, 1);
 							// clear timeout
 							$timeout.cancel(timer);
 						}, defaultTimeout);
 					}
+				};
+
+				scope.$on('notifications:error', function (event, data) {
+					notificationHandler(event, data, 'error');
 				});
 
 				scope.$on('notifications:warning', function (event, data) {
-					notifications.push({type: 'warning', message: data});
+					notificationHandler(event, data, 'warning');
 				});
 
 				scope.$on('notifications:success', function (event, data) {
-					notifications.push({type: 'success', message: data});
+					notificationHandler(event, data, 'success');
 				});
 
 				scope.close = function (index) {
