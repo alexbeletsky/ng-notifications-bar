@@ -41,6 +41,7 @@
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
+				var defaultTimeout = 3000;
 
 				scope.$on('notifications:error', function (event, data) {
 					var message, hide;
@@ -56,11 +57,13 @@
 
 					if (hide) {
 						var timer = $timeout(function () {
+							// TODO: apply the animation
+
 							// remove notification
 							notifications.splice(index - 1, 1);
 							// clear timeout
 							$timeout.cancel(timer);
-						}, 1000);
+						}, defaultTimeout);
 					}
 				});
 
