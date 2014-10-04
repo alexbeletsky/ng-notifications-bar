@@ -1,1 +1,99 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 16px;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
 
+a {
+	color: #049372;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+header {
+	text-align: center;
+	padding: 16px 0;
+}
+
+header h1 {
+	font-family: 'Merriweather';
+	font-weight: 900;
+}
+
+header p.info {
+	font-size: 18px;
+}
+
+section.buttons {
+	text-align: center;
+	padding: 30px 0;
+}
+
+section.buttons .hide {
+	margin-top: 16px;
+}
+
+section.example {
+	max-width: 560px;
+	margin: 0 auto;
+	background-color: #2C3E50;
+	color: #fff;
+	padding: 6px 24px;
+	border-radius: 6px;
+}
+
+pre.code {
+	white-space: pre-wrap;
+	font-size: 11px;
+	font-family: 'Source Code', 'Source Code Pro', monospace;
+}
+
+pre.code .kwrd, pre.code .str {
+	color: #86E2D5;
+}
+
+footer {
+	text-align: center;
+}
+
+.btn {
+	padding: 16px;
+	margin: 0 14px;
+	border: 0;
+	width: 160px;
+}
+
+.btn-error {
+	background-color: #F64747;
+	color: #fff;
+}
+
+.btn-warning {
+	background-color: #F7CA18;
+	color: #fff;
+}
+
+.btn-success {
+	background-color: #03C9A9;
+	color: #fff;
+}
+
+.github-ribbon {
+	font-family: sans-serif;
+	display: block;
+	background: #4183D7;
+	color: #fff;
+	font-size: 12px;
+	padding: 12px 50px;
+	position: absolute;
+	top: 38px;
+	right: -45px;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 1;
+}
