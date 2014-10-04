@@ -65,9 +65,8 @@
 					if (hide) {
 						var timer = $timeout(function () {
 							// TODO: apply the animation
-							// remove notification
+
 							notifications.splice(index - 1, 1);
-							// clear timeout
 							$timeout.cancel(timer);
 						}, defaultTimeout);
 					}
