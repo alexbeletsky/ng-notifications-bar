@@ -1,9 +1,16 @@
 (function (window, angular) {
 	var module = angular.module('ngNotificationsBar', []);
 
-	module.provider('ngNotificationsBar', function () {
+	module.provider('notificationsConfig', function () {
+		var config = {};
+
+		this.setHideTimeout = function (hide) {
+			config['hideTimeout'] = hide;
+		};
+
 		this.$get = function () {
-			return this;
+			return {
+			};
 		};
 	});
 
@@ -27,7 +34,7 @@
 		};
 	}]);
 
-	module.directive('notificationsBar', function ($timeout) {
+	module.directive('notificationsBar', function (notificationsConfig, $timeout) {
 		return {
 			restrict: 'EA',
 			template: '\
