@@ -2,6 +2,8 @@
 
 [Angular.js](https://angularjs.org/), [Animate.css](http://daneden.github.io/animate.css), [Glyphicons](http://glyphicons.com/), based component for stylish and flexible application notifications.
 
+[Demo](http://beletsky.net/ng-notifications-bar)
+
 ## Overview
 
 Web applications requires notify users of ongoing events. Common cases are errros, successful completion notifications etc. With `ng-notifications-bar` it's as easy as,
