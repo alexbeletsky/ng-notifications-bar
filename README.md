@@ -68,7 +68,7 @@ app.controllers('app', function ($scope, api, notification) {
 		.then(function (tasks) {
 			$scope.tasks = tasks;
 		}, function (error) {
-			notification.showError({message: error.message});notification
+			notification.showError({message: error.message});
 		});
 
 	$scope.submitTask = function () {
