@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
+	<link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/ngNotificationsBar.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 
@@ -10,7 +11,6 @@
 </head>
 <body ng-controller="main">
 	<notifications-bar class="notifications"></notifications-bar>
-
 	<div class="buttons">
 		<button type="submit" ng-click="showError()">Show Error</button>
 		<button type="submit" ng-click="showWarning()">Show Warning</button>

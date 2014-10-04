@@ -35,11 +35,33 @@ module.exports = function (grunt) {
 		watch: {
 			src: {
 				files: 'src/*.js',
-				tasks: ['uglify']
+				tasks: ['uglify'],
+				options: {
+					livereload: true
+				}
 			},
 			sass: {
 				files: 'sass/*.scss',
-				tasks: ['compass', 'cssmin']
+				tasks: ['compass', 'cssmin'],
+				options: {
+					livereload: true
+				}
+			},
+			html: {
+				files: 'example/*.html',
+				options: {
+					livereload: true
+				}
+			}
+		},
+		connect: {
+			example: {
+				options: {
+					port: 9002,
+					open: {
+						target: 'http://localhost:9002/example/index.html'
+					}
+				}
 			}
 		}
 	});
@@ -50,9 +72,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('sass', ['compass', 'cssmin']);
 	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
+	grunt.registerTask('start:example', ['connect', 'watch']);
+
 	grunt.registerTask('default', ['build']);
 
 };
