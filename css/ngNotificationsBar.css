@@ -1100,11 +1100,11 @@ body {
 .notifications .success {
   background-color: #03C9A9;
 }
-/* line 38, ../sass/ngNotificationsBar.scss */
+/* line 37, ../sass/ngNotificationsBar.scss */
 .notifications .warning {
   background-color: #F7CA18;
 }
-/* line 43, ../sass/ngNotificationsBar.scss */
+/* line 42, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
   font-size: 12px;
   cursor: pointer;

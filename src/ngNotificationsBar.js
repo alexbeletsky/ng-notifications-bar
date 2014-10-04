@@ -38,7 +38,7 @@
 		return {
 			restrict: 'EA',
 			template: '\
-				<div class="container">\
+				<div class="container" ng-if="notifications.length">\
 					<div class="{{note.type}}" ng-repeat="note in notifications">\
 						<span class="message">{{note.message}}</span>\
 						<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\

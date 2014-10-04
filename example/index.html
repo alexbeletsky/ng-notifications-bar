@@ -8,13 +8,67 @@
 	<script src="../bower_components/angular/angular.js"></script>
 	<script src="../src/ngNotificationsBar.js"></script>
 	<script src="js/app.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:900|Titillium+Web:300,700|Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="main">
 	<notifications-bar class="notifications"></notifications-bar>
-	<div class="buttons">
+
+	<header>
+		<h1>Ng-Notifications-Bar</h1>
+		<p class="info">
+			<a href="https://angularjs.org/">Angular.js</a>, <a href="http://daneden.github.io/animate.css">Animate.css</a>, <a href="http://glyphicons.com/">Glyphicons</a>, based component for stylish and flexible application notifications.
+		</p>
+	</header>
+
+	<section class="example">
+		<pre class="code">
+// HTML
+&lt;<span class="kwrd">notifications-bar</span> class=&quot;notifications&quot;&gt;&lt;/<span class="kwrd">notifications-bar</span>&gt;
+
+<span class="rem">// Javascript</span>
+<span class="kwrd">var</span> app = angular.module(<span class="str">'app'</span>, [<span class="str">'ngNotificationsBar'</span>]);
+app.controller(<span class="str">'main'</span>, function ($scope, notifications) {
+	$scope.showError = function () {
+		notifications.showError(<span class="str">'Oops! Something bad just happend!'</span>);
+	};
+	$scope.showWarning = function () {
+		notifications.showWarning(<span class="str">'Hey! Take a look here..'</span>);
+	};
+	$scope.showSuccess = function () {
+		notifications.showSuccess(<span class="str">'Congrats! Life is great!'</span>);
+	};
+});</pre>
+	</section>
+
+	<section class="buttons">
+		<button type="submit" class="btn btn-error" ng-click="showError()">Show Error</button>
+		<button type="submit" class="btn btn-warning" ng-click="showWarning()">Show Warning</button>
+		<button type="submit" class="btn btn-success" ng-click="showSuccess()">Show Success</button>
+
+		<div class="hide">
+			<label for="hide">Autohide</label>
+			<input id="hide" type="checkbox" />
+		</div>
+	</section>
+
+	<footer>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="alexbeletsky" data-related="likeastore">Tweet</a>
+
+		<iframe src="http://ghbtns.com/github-btn.html?user=alexanderbeletsky&repo=ng-notifications-bar&type=watch&count=true" allowtransparency="true"frameborder="0" scrolling="0" width="90" height="20"></iframe>
+
+		<iframe src="http://ghbtns.com/github-btn.html?user=alexanderbeletsky&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="180" height="20"></iframe>
+	</footer>
+
+	<a href="https://github.com/alexanderbeletsky/ng-notifications-bar" class="github-ribbon">Fork on Github</a>
+
+<!-- 	<div class="buttons">
 		<button type="submit" ng-click="showError()">Show Error</button>
 		<button type="submit" ng-click="showWarning()">Show Warning</button>
 		<button type="submit" ng-click="showSuccess()">Show Success</button>
 	</div>
+ -->
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>
