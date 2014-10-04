@@ -18,6 +18,7 @@ header {
 }
 
 header h1 {
+	font-size: 2.3em;
 	font-family: 'Merriweather';
 	font-weight: 900;
 }
@@ -38,7 +39,7 @@ section.buttons .hide {
 section.example {
 	max-width: 560px;
 	margin: 26px auto;
-	background-color: #6C7A89;
+	background-color: #4f5963;
 	color: #fff;
 	padding: 6px 24px;
 	border-radius: 6px;
