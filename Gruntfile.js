@@ -3,7 +3,8 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> (<%= pkg.homepage %>) */\n'
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> (<%= pkg.homepage %>) */\n',
+				mangle: false
 			},
 			main: {
 				files: {
@@ -65,7 +66,6 @@ module.exports = function (grunt) {
 			}
 		}
 	});
-
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');

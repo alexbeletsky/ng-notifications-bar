@@ -80,7 +80,6 @@
 					if (hide) {
 						var timer = $timeout(function () {
 							// TODO: apply the animation
-
 							removeById(id);
 							$timeout.cancel(timer);
 						}, defaultTimeout);
