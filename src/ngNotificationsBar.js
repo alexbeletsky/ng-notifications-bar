@@ -50,6 +50,20 @@
 				var timers = [];
 				var defaultTimeout = 3000;
 
+				var removeById = function (id) {
+					var found = -1;
+
+					notifications.forEach(function (el, index) {
+						if (el.id === id) {
+							found = index;
+						}
+					});
+
+					if (found >= 0) {
+						notifications.splice(found, 1);
+					}
+				};
+
 				var notificationHandler = function (event, data, type) {
 					var message, hide;
 
@@ -60,13 +74,14 @@
 						message = data;
 					}
 
-					var index = notifications.push({type: type, message: message});
+					var id = 'notif_' + (Math.floor(Math.random() * 100));
+					notifications.push({id: id, type: type, message: message});
 
 					if (hide) {
 						var timer = $timeout(function () {
 							// TODO: apply the animation
 
-							notifications.splice(index - 1, 1);
+							removeById(id);
 							$timeout.cancel(timer);
 						}, defaultTimeout);
 					}

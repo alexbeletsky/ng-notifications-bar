@@ -1,6 +1,6 @@
 body {
 	font-family: 'Titillium Web', sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -55,7 +55,7 @@ pre.code .kwrd, pre.code .str {
 }
 
 pre.code .rem {
-	color: #DCC6E0;
+	color: #E4F1FE;
 }
 
 footer {
@@ -67,6 +67,10 @@ footer {
 	margin: 0 14px;
 	border: 0;
 	width: 160px;
+}
+
+.btn:focus {
+	outline: 0;
 }
 
 .btn-error {
