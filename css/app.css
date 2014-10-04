@@ -37,8 +37,8 @@ section.buttons .hide {
 
 section.example {
 	max-width: 560px;
-	margin: 0 auto;
-	background-color: #34495E;
+	margin: 26px auto;
+	background-color: #6C7A89;
 	color: #fff;
 	padding: 6px 24px;
 	border-radius: 6px;
@@ -52,6 +52,10 @@ pre.code {
 
 pre.code .kwrd, pre.code .str {
 	color: #86E2D5;
+}
+
+pre.code .rem {
+	color: #DCC6E0;
 }
 
 footer {
@@ -83,7 +87,7 @@ footer {
 .github-ribbon {
 	font-family: sans-serif;
 	display: block;
-	background: #4183D7;
+	background: #ABB7B7;
 	color: #fff;
 	font-size: 12px;
 	padding: 12px 50px;

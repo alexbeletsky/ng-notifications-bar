@@ -1,16 +1,18 @@
 var app = angular.module('app', ['ngNotificationsBar']);
 
 app.controller('main', function ($scope, notifications) {
+	$scope.hide = true;
+
 	$scope.showError = function () {
-		notifications.showError({message: 'Oops! Something bad just happend!', hide: true});
+		notifications.showError({message: 'Oops! Something bad just happend!', hide: $scope.hide});
 	};
 
 	$scope.showWarning = function () {
-		notifications.showWarning('Hey! Take a look here..');
+		notifications.showWarning({message: 'Hey! Take a look here..', hide: $scope.hide});
 	};
 
 	$scope.showSuccess = function () {
-		notifications.showSuccess('Congrats! Life is great!');
+		notifications.showSuccess({message: 'Congrats! Life is great!', hide: $scope.hide});
 	};
 
 });
