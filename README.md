@@ -97,6 +97,34 @@ app.config(['notificationConfigProvider'], function (notificationConfigProvider)
 }])
 ```
 
+## Development
+
+Install `bower` dependencies,
+
+```bash
+$ bower install
+```
+
+Install `npm` dependencies,
+
+```bash
+$ npm install
+```
+
+Run `grunt` build,
+
+```bash
+$ grunt
+```
+
+as result, `/dist` folder is created with ready to use `.js` and `.css` file.
+
+Project doesn't have tests at the moment, so run `example` and check the functionality,
+
+```bash
+$ grunt start:example
+```
+
 ## Licence
 
 Copyright (c) 2014, alexander.beletsky@gmail.com
