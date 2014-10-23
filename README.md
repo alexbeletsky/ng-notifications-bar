@@ -28,9 +28,10 @@ Or bower installation,
 $ bower install ng-notifications-bar --save
 ```
 
-Update your scripts section or use the require for browserified applications.
+Update your scripts and styles section or use the require for browserified applications.
 
 ```html
+<link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
 <script scr="bower_components/angular-notifications-bar/dist/ng-notifications-bar.min.js"></script>
 ```
 
