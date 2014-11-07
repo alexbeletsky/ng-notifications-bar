@@ -70,8 +70,10 @@
 					if (typeof data === 'object') {
 						message = data.message;
 						hide = data.hide;
+						hideDelay = data.hideDelay || defaultTimeout;
 					} else {
 						message = data;
+						hideDelay = data.hideDelay || defaultTimeout;
 					}
 
 					var id = 'notif_' + (Math.floor(Math.random() * 100));
@@ -82,7 +84,7 @@
 							// TODO: apply the animation
 							removeById(id);
 							$timeout.cancel(timer);
-						}, defaultTimeout);
+						}, hideDelay);
 					}
 				};
 
