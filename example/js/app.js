@@ -1,8 +1,11 @@
 var app = angular.module('app', ['ngNotificationsBar']);
+app.config(['notificationsConfigProvider', function(notificationsConfigProvider){
+  notificationsConfigProvider.setHideDelay(1500);
+}]);
 
 app.controller('main', function ($scope, notifications) {
 	$scope.hide = true;
-	$scope.hideDelay = 1500;
+	$scope.hideDelay = 3000;
 
 	$scope.showError = function () {
 		notifications.showError({message: 'Oops! Something bad just happend!', hide: $scope.hide, hideDelay: $scope.hideDelay});
