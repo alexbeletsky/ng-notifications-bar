@@ -1,17 +1,25 @@
 (function (window, angular) {
 	var module = angular.module('ngNotificationsBar', []);
 
-	module.provider('notificationsConfig', function () {
+	module.provider('notificationsConfig', function() {
 		var config = {};
 
-		this.setHideTimeout = function (hide) {
-			config['hideTimeout'] = hide;
-		};
+    function setHideDelay(value){
+      config.hideDelay = value;
+    }
 
-		this.$get = function () {
-			return {
-			};
-		};
+    function getHideDelay(){
+      return config.hideDelay;
+    }
+
+    return {
+      setHideDelay: setHideDelay,
+      $get: function(){
+        return {
+          getHideDelay: getHideDelay
+        };
+      }
+    };
 	});
 
 	module.factory('notifications', ['$rootScope', function ($rootScope) {
@@ -48,7 +56,7 @@
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
-				var defaultTimeout = 3000;
+        var defaultTimeout = notificationsConfig.getHideDelay() || 3000; //control hide delay globaly throught module.config()
 
 				var removeById = function (id) {
 					var found = -1;
@@ -70,15 +78,13 @@
 					if (typeof data === 'object') {
 						message = data.message;
 						hide = data.hide;
-						hideDelay = data.hideDelay || defaultTimeout;
+						hideDelay = data.hideDelay || defaultTimeout; //control hide delay per notification
 					} else {
 						message = data;
-						hideDelay = data.hideDelay || defaultTimeout;
 					}
 
 					var id = 'notif_' + (Math.floor(Math.random() * 100));
 					notifications.push({id: id, type: type, message: message});
-
 					if (hide) {
 						var timer = $timeout(function () {
 							// TODO: apply the animation
