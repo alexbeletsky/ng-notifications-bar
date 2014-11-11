@@ -1,6 +1,6 @@
 {
   "name": "ng-notifications-bar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular.js component for stylish and flexible application notifications.",
   "main": "src/ngNotificationsBar.js",
   "directories": {
