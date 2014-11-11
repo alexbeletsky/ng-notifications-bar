@@ -1,0 +1,17 @@
+@mixin slideOutRight($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(slideOutRight $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(slideOutRight) {
+			0% {
+				opacity: 1;
+				@include transform(translateX(0));
+			}
+			100% {
+				opacity: 0;
+				@include transform(translateX(2000px));
+			}
+		}
+	}
+}

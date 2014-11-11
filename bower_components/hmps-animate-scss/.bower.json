@@ -1,0 +1,14 @@
+{
+  "name": "hmps-animate-scss",
+  "homepage": "https://github.com/hmps/animate.scss",
+  "version": "1.0.1",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "6a59a0085b8060a4f71c3fd77c1685a2b1d1e9b1"
+  },
+  "_source": "git://github.com/hmps/animate.scss.git",
+  "_target": "~1.0.1",
+  "_originalSource": "hmps-animate-scss"
+}

@@ -1,0 +1,17 @@
+@mixin fadeOutLeftBig($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(fadeOutLeftBig $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(fadeOutLeftBig) {
+			0% {
+				opacity: 0;
+				@include transform(translateX(0));
+			}
+			100% {
+				opacity: 1;
+				@include transform(translateX(-2000px));
+			}
+		}
+	}
+}

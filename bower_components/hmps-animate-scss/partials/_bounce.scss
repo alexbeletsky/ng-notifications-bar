@@ -1,0 +1,18 @@
+@mixin bounce($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(bounce $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(bounce) {
+			0%, 20%, 50%, 80%, 100% {
+				@include transform(translateY(0px));
+			}
+			40% {
+				@include transform(translateY(-30px));
+			}
+			60% {
+				@include transform(translateY(-15px));
+			}
+		}
+	}
+}

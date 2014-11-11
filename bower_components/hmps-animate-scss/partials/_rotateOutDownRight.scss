@@ -1,0 +1,18 @@
+@mixin rotateOutDownRight($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(rotateOutDownRight $duration $function $delay $count $fill);
+	@include transform-origin(right bottom);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(rotateOutDownRight) {
+			0% {
+				@include transform(rotate(0));
+				opacity: 1;
+			}
+			100% {
+				@include transform(rotate(-90deg));
+				opacity: 0;
+			}
+		}
+	}
+}
