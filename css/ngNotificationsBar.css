@@ -1022,7 +1022,7 @@ body {
 }
 
 /* line 5, ../sass/ngNotificationsBar.scss */
-.notifications .container {
+.notifications .notifications-container {
   position: fixed;
   top: 0;
   left: 0;
