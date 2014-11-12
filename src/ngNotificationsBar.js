@@ -4,22 +4,22 @@
 	module.provider('notificationsConfig', function() {
 		var config = {};
 
-    function setHideDelay(value){
-      config.hideDelay = value;
-    }
+		function setHideDelay(value){
+			config.hideDelay = value;
+		}
 
-    function getHideDelay(){
-      return config.hideDelay;
-    }
+		function getHideDelay(){
+			return config.hideDelay;
+		}
 
-    return {
-      setHideDelay: setHideDelay,
-      $get: function(){
-        return {
-          getHideDelay: getHideDelay
-        };
-      }
-    };
+		return {
+			setHideDelay: setHideDelay,
+			$get: function(){
+				return {
+					getHideDelay: getHideDelay
+				};
+			}
+		};
 	});
 
 	module.factory('notifications', ['$rootScope', function ($rootScope) {
@@ -56,7 +56,7 @@
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
-        var defaultTimeout = notificationsConfig.getHideDelay() || 3000; //control hide delay globaly throught module.config()
+				var defaultTimeout = notificationsConfig.getHideDelay() || 3000; //control hide delay globaly throught module.config()
 
 				var removeById = function (id) {
 					var found = -1;
