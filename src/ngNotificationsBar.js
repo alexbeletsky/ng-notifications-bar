@@ -12,11 +12,21 @@
 			return config.hideDelay;
 		}
 
+		function setAutoHide(value){
+			config.autoHide = value;
+		}
+
+		function getAutoHide(){
+			return config.autoHide;
+		}
+
 		return {
 			setHideDelay: setHideDelay,
+			setAutoHide: setAutoHide,
 			$get: function(){
 				return {
-					getHideDelay: getHideDelay
+					getHideDelay: getHideDelay,
+					getAutoHide: getAutoHide
 				};
 			}
 		};
@@ -57,7 +67,7 @@
 				var notifications = scope.notifications = [];
 				var timers = [];
 				var defaultTimeout = notificationsConfig.getHideDelay() || 3000; //control hide delay globaly throught module.config()
-
+				var autoHide = notificationsConfig.getAutoHide() || false; //control auto hide globaly throught module.config()
 				var removeById = function (id) {
 					var found = -1;
 
@@ -77,7 +87,7 @@
 
 					if (typeof data === 'object') {
 						message = data.message;
-						hide = data.hide;
+						hide = (typeof data.hide === 'undefined') ? autoHide : !!data.hide; //control auto hide per notification
 						hideDelay = data.hideDelay || defaultTimeout; //control hide delay per notification
 					} else {
 						message = data;
