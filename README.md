@@ -10,11 +10,11 @@ Web applications requires notify users of ongoing events. Common cases are errro
 
 ```html
 <body>
-	<notifications-bar class="notifications"></notifications-bar>
+		<notifications-bar class="notifications"></notifications-bar>
 	...
 ```
 
-## Installation 
+## Installation
 
 Npm installation,
 
@@ -85,17 +85,59 @@ app.controllers('app', function ($scope, api, notifications) {
 
 ### Provider
 
-`notificationConfigProvider` is used to override some notifications bar defaults.
+`notificationsConfigProvider` is used to override some notifications bar defaults.
 
 ```js
-app.config(['notificationConfigProvider'], function (notificationConfigProvider) {
+app.config(['notificationsConfigProvider'], function (notificationsConfigProvider) {
 	// predefined messages
-	notificationConfigProvider.setMessage('error', 'Sorry, something bad just happend. Please try it again.');
-	notificationConfigProvider.setMessage('success', 'Congrats! The operation completed successully.');
+	notificationsConfigProvider.setMessage('error', 'Sorry, something bad just happend. Please try it again.');
+	notificationsConfigProvider.setMessage('success', 'Congrats! The operation completed successully.');
 
 	// animation config
-	notificationConfigProvider.animationMethod('fadeInDown')
+	notificationsConfigProvider.animationMethod('fadeInDown')
+
+	// auto hide
+	notificationsConfigProvider.setAutoHide(true)
+
+	// delay before hide
+	notificationsConfigProvider.setHideDelay(3000)
 }])
+```
+
+## Settings
+It is possible to setup the whole notifications bar module in module config and each notification separately in controller
+
+Available options:
+
+- autoHide
+- hideDelay
+
+
+#### To set up in module config:
+
+```js
+app.config(['notificationsConfigProvider'], function (notificationsConfigProvider) {
+	// auto hide
+	notificationsConfigProvider.setAutoHide(true);
+
+	// delay before hide
+	notificationsConfigProvider.setHideDelay(3000);
+}])
+```
+
+
+#### To set up each notification separately in controller:
+
+```js
+app.controller('main', function ($scope, notifications) {
+	$scope.showError = function () {
+		notifications.showError({
+			message: 'Oops! Something bad just happend! (hides faster)',
+			hideDelay: 1500, //ms
+			hide: true //bool
+		});
+	};
+});
 ```
 
 ## Development
