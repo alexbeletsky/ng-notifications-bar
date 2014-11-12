@@ -10,7 +10,7 @@ Web applications requires notify users of ongoing events. Common cases are errro
 
 ```html
 <body>
-		<notifications-bar class="notifications"></notifications-bar>
+	<notifications-bar class="notifications"></notifications-bar>
 	...
 ```
 
@@ -89,13 +89,6 @@ app.controllers('app', function ($scope, api, notifications) {
 
 ```js
 app.config(['notificationsConfigProvider'], function (notificationsConfigProvider) {
-	// predefined messages
-	notificationsConfigProvider.setMessage('error', 'Sorry, something bad just happend. Please try it again.');
-	notificationsConfigProvider.setMessage('success', 'Congrats! The operation completed successully.');
-
-	// animation config
-	notificationsConfigProvider.animationMethod('fadeInDown')
-
 	// auto hide
 	notificationsConfigProvider.setAutoHide(true)
 
@@ -113,7 +106,7 @@ Available options:
 - hideDelay
 
 
-#### To set up in module config:
+### During configuration
 
 ```js
 app.config(['notificationsConfigProvider'], function (notificationsConfigProvider) {
@@ -126,7 +119,7 @@ app.config(['notificationsConfigProvider'], function (notificationsConfigProvide
 ```
 
 
-#### To set up each notification separately in controller:
+### Override in controller
 
 ```js
 app.controller('main', function ($scope, notifications) {
