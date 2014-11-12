@@ -6,15 +6,15 @@ app.config(['notificationsConfigProvider', function(notificationsConfigProvider)
 
 app.controller('main', function ($scope, notifications) {
 	$scope.showError = function () {
-		notifications.showError({message: 'Oops! Something bad just happend! (hides faster)', hideDelay: 1500});
+		notifications.showError('Oops! Something bad just happend!');
 	};
 
 	$scope.showWarning = function () {
-		notifications.showWarning({message: 'Hey! Take a look here.. (doesn\'t hide)', hide: false});
+		notifications.showWarning('Hey! Take a look here..');
 	};
 
 	$scope.showSuccess = function () {
-		notifications.showSuccess({message: 'Congrats! Life is great! (uses default settings)'});
+		notifications.showSuccess('Congrats! Life is great!');
 	};
 
 });
