@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ngNotificationsBar']);
 app.config(['notificationsConfigProvider', function(notificationsConfigProvider){
-  notificationsConfigProvider.setHideDelay(1500);
+	notificationsConfigProvider.setHideDelay(1500);
 }]);
 
 app.controller('main', function ($scope, notifications) {
