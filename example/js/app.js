@@ -10,7 +10,7 @@ app.controller('main', function ($scope, notifications) {
 	};
 
 	$scope.showWarning = function () {
-		notifications.showWarning({message: 'Hey! Take a look here.. (doesn\'t hides)', hide: false});
+		notifications.showWarning({message: 'Hey! Take a look here.. (doesn\'t hide)', hide: false});
 	};
 
 	$scope.showSuccess = function () {

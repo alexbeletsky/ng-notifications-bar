@@ -22,10 +22,13 @@
 
 		return {
 			setHideDelay: setHideDelay,
+
 			setAutoHide: setAutoHide,
+
 			$get: function(){
 				return {
 					getHideDelay: getHideDelay,
+
 					getAutoHide: getAutoHide
 				};
 			}
@@ -66,8 +69,9 @@
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
-				var defaultTimeout = notificationsConfig.getHideDelay() || 3000; //control hide delay globaly throught module.config()
-				var autoHide = notificationsConfig.getAutoHide() || false; //control auto hide globaly throught module.config()
+				var defaultTimeout = notificationsConfig.getHideDelay() || 3000;
+				var autoHide = notificationsConfig.getAutoHide() || false;
+
 				var removeById = function (id) {
 					var found = -1;
 
@@ -83,12 +87,12 @@
 				};
 
 				var notificationHandler = function (event, data, type) {
-					var message, hide;
+					var message, hide, hideDelay;
 
 					if (typeof data === 'object') {
 						message = data.message;
-						hide = (typeof data.hide === 'undefined') ? autoHide : !!data.hide; //control auto hide per notification
-						hideDelay = data.hideDelay || defaultTimeout; //control hide delay per notification
+						hide = (typeof data.hide === 'undefined') ? autoHide : !!data.hide;
+						hideDelay = data.hideDelay || defaultTimeout;
 					} else {
 						message = data;
 					}
@@ -97,7 +101,6 @@
 					notifications.push({id: id, type: type, message: message});
 					if (hide) {
 						var timer = $timeout(function () {
-							// TODO: apply the animation
 							removeById(id);
 							$timeout.cancel(timer);
 						}, hideDelay);
