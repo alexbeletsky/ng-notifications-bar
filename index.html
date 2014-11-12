@@ -32,10 +32,16 @@
 <span class="kwrd">var</span> app = angular.module(<span class="str">'app'</span>, [<span class="str">'ngNotificationsBar'</span>]);
 app.controller(<span class="str">'main'</span>, function ($scope, notifications) {
 	$scope.showError = function () {
-		notifications.showError(<span class="str">'Oops! Something bad just happend!'</span>);
+		notifications.showError({
+			message: <span class="str">'Oops! Something bad just happend!'</span>,
+			hideDelay: 1500
+		});
 	};
 	$scope.showWarning = function () {
-		notifications.showWarning(<span class="str">'Hey! Take a look here..'</span>);
+		notifications.showWarning({
+			message: <span class="str">'Hey! Take a look here..'</span>,
+			hide: false
+		});
 	};
 	$scope.showSuccess = function () {
 		notifications.showSuccess(<span class="str">'Congrats! Life is great!'</span>);
@@ -47,11 +53,6 @@ app.controller(<span class="str">'main'</span>, function ($scope, notifications)
 		<button type="submit" class="btn btn-error" ng-click="showError()">Show Error</button>
 		<button type="submit" class="btn btn-warning" ng-click="showWarning()">Show Warning</button>
 		<button type="submit" class="btn btn-success" ng-click="showSuccess()">Show Success</button>
-
-		<div class="hide">
-			<label for="hide">Autohide</label>
-			<input id="hide" type="checkbox" ng-model="hide" />
-		</div>
 	</section>
 
 	<footer>

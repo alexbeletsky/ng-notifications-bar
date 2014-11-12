@@ -1,22 +1,20 @@
 var app = angular.module('app', ['ngNotificationsBar']);
 app.config(['notificationsConfigProvider', function(notificationsConfigProvider){
-	notificationsConfigProvider.setHideDelay(1500);
+	notificationsConfigProvider.setHideDelay(3000);
+	notificationsConfigProvider.setAutoHide(true);
 }]);
 
 app.controller('main', function ($scope, notifications) {
-	$scope.hide = true;
-	$scope.hideDelay = 3000;
-
 	$scope.showError = function () {
-		notifications.showError({message: 'Oops! Something bad just happend!', hide: $scope.hide, hideDelay: $scope.hideDelay});
+		notifications.showError({message: 'Oops! Something bad just happend! (hides faster)', hideDelay: 1500});
 	};
 
 	$scope.showWarning = function () {
-		notifications.showWarning({message: 'Hey! Take a look here..', hide: $scope.hide});
+		notifications.showWarning({message: 'Hey! Take a look here.. (doesn\'t hides)', hide: false});
 	};
 
 	$scope.showSuccess = function () {
-		notifications.showSuccess({message: 'Congrats! Life is great!', hide: $scope.hide});
+		notifications.showSuccess({message: 'Congrats! Life is great! (uses default settings)'});
 	};
 
 });
