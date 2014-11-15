@@ -5,11 +5,11 @@
 	} else if (typeof define === 'function' && define.amd) {
 		// AMD
 		define(['angular'], function (angular) {
-			return (root.returnExportsGlobal = factory(root, angular));
+			return (root.ngNotificationsBar = factory(root, angular));
 		});
 	} else {
 		// Global Variables
-		root.returnExportsGlobal = factory(root, root.angular);
+		root.ngNotificationsBar = factory(root, root.angular);
 	}
 }(this, function (window, angular) {
 	return ngNotificationsBar(window, angular);
