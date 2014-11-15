@@ -1,4 +1,21 @@
-(function (window, angular) {
+(function (root, factory) {
+	if (typeof exports === 'object') {
+		// CommonJS
+		module.exports = factory(root, require('angular'));
+	} else if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['angular'], function (angular) {
+			return (root.returnExportsGlobal = factory(root, angular));
+		});
+	} else {
+		// Global Variables
+		root.returnExportsGlobal = factory(root, root.angular);
+	}
+}(this, function (window, angular) {
+	return ngNotificationsBar(window, angular);
+}));
+
+function ngNotificationsBar(window, angular) {
 	var module = angular.module('ngNotificationsBar', []);
 
 	module.provider('notificationsConfig', function() {
@@ -126,4 +143,5 @@
 		};
 	});
 
-})(window, angular);
+	return module;
+}

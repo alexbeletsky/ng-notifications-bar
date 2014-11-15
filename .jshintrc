@@ -56,6 +56,7 @@
 
 	"globals": {
 		"angular": false,
-		"$": false
+		"$": false,
+		"define"
 	}
 }
