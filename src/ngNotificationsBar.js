@@ -69,7 +69,7 @@
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
-				var defaultTimeout = notificationsConfig.getHideDelay() || 3000;
+				var autoHideDelay = notificationsConfig.getHideDelay() || 3000;
 				var autoHide = notificationsConfig.getAutoHide() || false;
 
 				var removeById = function (id) {
@@ -87,12 +87,12 @@
 				};
 
 				var notificationHandler = function (event, data, type) {
-					var message, hide, hideDelay;
+					var message, hide = autoHide, hideDelay = autoHideDelay;
 
 					if (typeof data === 'object') {
 						message = data.message;
 						hide = (typeof data.hide === 'undefined') ? autoHide : !!data.hide;
-						hideDelay = data.hideDelay || defaultTimeout;
+						hideDelay = data.hideDelay || hideDelay;
 					} else {
 						message = data;
 					}
