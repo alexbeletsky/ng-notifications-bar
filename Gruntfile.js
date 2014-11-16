@@ -64,6 +64,11 @@ module.exports = function (grunt) {
 					}
 				}
 			}
+		},
+		shell: {
+			deploy: {
+				command: 'git subtree push --prefix example origin gh-pages'
+			}
 		}
 	});
 
@@ -73,9 +78,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('sass', ['compass', 'cssmin']);
 	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
+	grunt.registerTask('deploy', ['build', 'shell']);
+
 	grunt.registerTask('start:example', ['connect', 'watch']);
 
 	grunt.registerTask('default', ['build']);
