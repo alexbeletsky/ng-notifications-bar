@@ -1095,16 +1095,19 @@ body {
 /* line 27, ../sass/ngNotificationsBar.scss */
 .notifications .error {
   background-color: #F64747;
+  border-bottom: 1px solid #f31515;
 }
-/* line 32, ../sass/ngNotificationsBar.scss */
+/* line 33, ../sass/ngNotificationsBar.scss */
 .notifications .success {
   background-color: #03C9A9;
+  border-bottom: 1px solid #02aa8f;
 }
-/* line 37, ../sass/ngNotificationsBar.scss */
+/* line 39, ../sass/ngNotificationsBar.scss */
 .notifications .warning {
   background-color: #F7CA18;
+  border-bottom: 1px solid #e7ba08;
 }
-/* line 42, ../sass/ngNotificationsBar.scss */
+/* line 45, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
   font-size: 12px;
   cursor: pointer;
