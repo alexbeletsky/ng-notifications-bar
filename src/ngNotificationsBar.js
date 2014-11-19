@@ -1,19 +1,14 @@
 (function (root, factory) {
 	if (typeof exports === 'object') {
-		// CommonJS
 		module.exports = factory(root, require('angular'));
 	} else if (typeof define === 'function' && define.amd) {
-		// AMD
 		define(['angular'], function (angular) {
 			return (root.ngNotificationsBar = factory(root, angular));
 		});
 	} else {
-		// Global Variables
 		root.ngNotificationsBar = factory(root, root.angular);
 	}
-}(this, function (window, angular) {
-	return ngNotificationsBar(window, angular);
-}));
+}(this, ngNotificationsBar));
 
 function ngNotificationsBar(window, angular) {
 	var module = angular.module('ngNotificationsBar', []);
@@ -114,7 +109,7 @@ function ngNotificationsBar(window, angular) {
 						message = data;
 					}
 
-					var id = 'notif_' + (Math.floor(Math.random() * 100));
+					var id = 'notif_' + (Math.floor(Math.random() * 128));
 					notifications.push({id: id, type: type, message: message});
 					if (hide) {
 						var timer = $timeout(function () {
