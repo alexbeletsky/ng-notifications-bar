@@ -53,6 +53,8 @@ In application module,
 angular.module('app', ['ngNotificationsBar']);
 ```
 
+Please **note**, since `ng-notifications-bar` have a dependency on `glyphicons` you have to copy `/fonts` folder into yours `/public` folder manually.
+
 ## API
 
 The module consists of there elements - directive, service and provider.
