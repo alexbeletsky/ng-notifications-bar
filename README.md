@@ -41,6 +41,12 @@ In application module,
 angular.module('app', ['ngNotificationsBar']);
 ```
 
+In case you are using `sass` in project, it's possible to just import `ngNotificationsBar` styles,
+
+```scss
+@import "../../node_modules/ng-notifications-bar/sass/ngNotificationsBar";
+```
+
 ## API
 
 The module consists of there elements - directive, service and provider.
