@@ -35,16 +35,22 @@ Update your scripts and styles section or use the require for browserified appli
 <script scr="bower_components/angular-notifications-bar/dist/ng-notifications-bar.min.js"></script>
 ```
 
-In application module,
+For `browserify` applications, require module in yours application module,
 
 ```js
-angular.module('app', ['ngNotificationsBar']);
+require('ng-notifications-bar');
 ```
 
 In case you are using `sass` in project, it's possible to just import `ngNotificationsBar` styles,
 
 ```scss
 @import "../../node_modules/ng-notifications-bar/sass/ngNotificationsBar";
+```
+
+In application module,
+
+```js
+angular.module('app', ['ngNotificationsBar']);
 ```
 
 ## API
