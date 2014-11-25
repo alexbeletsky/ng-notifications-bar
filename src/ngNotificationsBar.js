@@ -8,7 +8,7 @@
 	} else {
 		root.ngNotificationsBar = factory(root, root.angular);
 	}
-}(this, function ngNotificationsBar(window, angular) {
+}(this, function (window, angular) {
 	var module = angular.module('ngNotificationsBar', []);
 
 	module.provider('notificationsConfig', function() {
@@ -137,4 +137,4 @@
 	});
 
 	return module;
-});
+}));
