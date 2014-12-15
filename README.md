@@ -6,7 +6,7 @@
 
 ## Overview
 
-Web applications requires notify users of ongoing events. Common cases are errros, successful completion notifications etc. With `ng-notifications-bar` it's as easy as,
+Web applications requires notify users of ongoing events. Common cases are errors, successful completion notifications etc. With `ng-notifications-bar` it's as easy as,
 
 ```html
 <body>
@@ -61,7 +61,7 @@ The module consists of there elements - directive, service and provider.
 
 ### Directive
 
-`notifications-bar` element directive, should be placed once, typically righ after `<body>` open tag.
+`notifications-bar` element directive, should be placed once, typically right after `<body>` open tag.
 
 ```html
 <notifications-bar class="notifications"></notifications-bar>
@@ -87,11 +87,11 @@ app.controllers('app', function ($scope, api, notifications) {
 		});
 
 	$scope.submitTask = function () {
-		api.post({resouce: 'tasks'}, {description: this.description})
+		api.post({resource: 'tasks'}, {description: this.description})
 			.then(function () {
 				notifications.showSuccess({message: 'Your task posted successfully'});
 			}, function (error) {
-				notifications.showError({message: 'Oh no! Task submition failed, please try again.'});
+				notifications.showError({message: 'Oh no! Task submission failed, please try again.'});
 			});
 	}
 });
@@ -139,7 +139,7 @@ app.config(['notificationsConfigProvider'], function (notificationsConfigProvide
 app.controller('main', function ($scope, notifications) {
 	$scope.showError = function () {
 		notifications.showError({
-			message: 'Oops! Something bad just happend! (hides faster)',
+			message: 'Oops! Something bad just happened! (hides faster)',
 			hideDelay: 1500, //ms
 			hide: true //bool
 		});
