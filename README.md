@@ -56,7 +56,7 @@ In application module,
 angular.module('app', ['ngNotificationsBar', 'ngSanitize']);
 ```
 
-Please **note**, since `ng-notifications-bar` have a dependency on `glyphicons` you have to copy `/fonts` folder into yours `/public` folder manually.
+Please **note**, since `ng-notifications-bar` have a dependency on `glyphicons` you have to copy `/fonts` folder into yours `/public` folder manually. Also `ngSanitize` can be omitted if HTML support isn't needed.
 
 ## API
 
