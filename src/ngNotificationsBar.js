@@ -22,6 +22,15 @@
 			return config.hideDelay;
 		}
 
+		function setAcceptHTML(value){
+			config.acceptHTML = value;
+		}
+
+		function getAcceptHTML(){
+			return config.acceptHTML;
+		}
+
+
 		function setAutoHide(value){
 			config.autoHide = value;
 		}
@@ -35,11 +44,15 @@
 
 			setAutoHide: setAutoHide,
 
+			setAcceptHTML: setAcceptHTML,
+
 			$get: function(){
 				return {
 					getHideDelay: getHideDelay,
 
-					getAutoHide: getAutoHide
+					getAutoHide: getAutoHide,
+
+					getAcceptHTML: getAcceptHTML
 				};
 			}
 		};
@@ -68,14 +81,25 @@
 	module.directive('notificationsBar', function (notificationsConfig, $timeout) {
 		return {
 			restrict: 'EA',
-			template: '\
-				<div class="notifications-container" ng-if="notifications.length">\
-					<div class="{{note.type}}" ng-repeat="note in notifications">\
-						<span class="message" ng-bind-html="note.message"></span>\
-						<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
+			template: function(){
+				var acceptHTML = notificationsConfig.getAcceptHTML() || false;
+				return acceptHTML ? '\
+					<div class="notifications-container" ng-if="notifications.length">\
+						<div class="{{note.type}}" ng-repeat="note in notifications">\
+							<span class="message" ng-bind-html="note.message"></span>\
+							<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
+						</div>\
 					</div>\
-				</div>\
-			',
+				' : '\
+					<div class="notifications-container" ng-if="notifications.length">\
+						<div class="{{note.type}}" ng-repeat="note in notifications">\
+							<span class="message" >{{note.message}}</span>\
+							<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
+						</div>\
+					</div>\
+				'
+
+			},
 			link: function (scope) {
 				var notifications = scope.notifications = [];
 				var timers = [];
