@@ -38,7 +38,7 @@ app.controller(<span class="str">'main'</span>, function ($scope, notifications)
 		notifications.showError(<span class="str">'Oops! Something bad just happend!'</span>);
 	};
 	$scope.showWarning = function () {
-		notifications.showWarning(<span class="str">'Hey! Take a look here..'</span>);
+		notifications.showWarning(<span class="str">'Hey! Take a look &lt;em&gt;here&lt;/em&gt;..'</span>);
 	};
 	$scope.showSuccess = function () {
 		notifications.showSuccess(<span class="str">'Congrats! Life is great!'</span>);
@@ -61,7 +61,9 @@ app.controller(<span class="str">'main'</span>, function ($scope, notifications)
 	</footer>
 
 	<a href="https://github.com/alexanderbeletsky/ng-notifications-bar" class="github-ribbon">Fork on Github</a>
-
+ <!-- bower:js -->
+ <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+ <!-- endbower -->
  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>
