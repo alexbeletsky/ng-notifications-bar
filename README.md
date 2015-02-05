@@ -36,7 +36,7 @@ Update your scripts and styles section or use the require for browserified appli
 <script scr="bower_components/angular-notifications-bar/dist/ng-notifications-bar.min.js"></script>
 ```
 
-Or, if you use Grunt, `wiredep` should inject the required bower components.
+If you use Grunt, `wiredep` should inject the required `angular-sanitize.js` for you.
 
 For `browserify` applications, require module in yours application module,
 
