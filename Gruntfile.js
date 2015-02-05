@@ -90,7 +90,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('sass', ['compass', 'cssmin']);
-	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
+	grunt.registerTask('build', ['uglify', 'compass', 'cssmin', 'wiredep']);
 	grunt.registerTask('deploy', ['build', 'shell']);
 
 	grunt.registerTask('start:example', ['connect', 'watch']);
