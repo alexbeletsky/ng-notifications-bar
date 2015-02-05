@@ -71,7 +71,7 @@
 			template: '\
 				<div class="notifications-container" ng-if="notifications.length">\
 					<div class="{{note.type}}" ng-repeat="note in notifications">\
-						<span class="message">{{note.message}}</span>\
+						<span class="message" ng-bind-html="note.message"></span>\
 						<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
 					</div>\
 				</div>\

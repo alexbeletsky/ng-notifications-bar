@@ -69,8 +69,17 @@ module.exports = function (grunt) {
 			deploy: {
 				command: 'git subtree push --prefix example origin gh-pages'
 			}
+		},
+		wiredep: {
+			task: {
+				src: [
+					'example/*.html',
+				]
+			}
 		}
 	});
+	
+	grunt.loadNpmTasks('grunt-wiredep');
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');

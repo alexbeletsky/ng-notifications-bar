@@ -36,6 +36,7 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "dependencies": {
-    "grunt-shell": "^1.1.1"
+    "grunt-shell": "^1.1.1",
+    "grunt-wiredep": "^2.0.0"
   }
 }
