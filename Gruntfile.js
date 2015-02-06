@@ -69,8 +69,17 @@ module.exports = function (grunt) {
 			deploy: {
 				command: 'git subtree push --prefix example origin gh-pages'
 			}
+		},
+		wiredep: {
+			task: {
+				src: [
+					'example/*.html',
+				]
+			}
 		}
 	});
+	
+	grunt.loadNpmTasks('grunt-wiredep');
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -81,7 +90,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('sass', ['compass', 'cssmin']);
-	grunt.registerTask('build', ['uglify', 'compass', 'cssmin']);
+	grunt.registerTask('build', ['uglify', 'compass', 'cssmin', 'wiredep']);
 	grunt.registerTask('deploy', ['build', 'shell']);
 
 	grunt.registerTask('start:example', ['connect', 'watch']);
