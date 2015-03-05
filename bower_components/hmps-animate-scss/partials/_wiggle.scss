@@ -1,0 +1,20 @@
+@mixin wiggle($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(wiggle $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(wiggle) {
+			0% {  @include transform(skewX(0deg)); }
+			10% { @include transform(skewX(-8deg)); }
+			20% { @include transform(skewX(7deg)); }
+			30% { @include transform(skewX(-6deg)); }
+			40% { @include transform(skewX(5deg)); }
+			50% { @include transform(skewX(-4deg)); }
+			60% { @include transform(skewX(3deg)); }
+			70% { @include transform(skewX(-2deg)); }
+			80% { @include transform(skewX(1deg)); }
+			90% { @include transform(skewX(0deg)); }
+			100% { @include transform(skewX(0deg)); }
+		}
+	}
+}

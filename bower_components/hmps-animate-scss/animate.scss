@@ -1,0 +1,151 @@
+@charset "UTF-8";
+//-----------------------------------------------------------------------//
+// ANIMATE.SCSS
+//
+// With animate.scss you can create beatiful and engaging animation without
+// barely touching any code. Just include a mixin and your good to go!
+
+// DOCUMENATION:
+// Check out the GitHub repo for docs on how to use animate.scss
+//
+// CREDIT:
+// @daneden for the original concept in animate.css
+// @jackilyn for the scss port of Daniel's work
+//
+// LICENSE:
+// WFTPL - http://www.wtfpl.net/
+//
+// Version: 1.0.1
+//-----------------------------------------------------------------------//
+
+//-----------------------------------------------------------------------//
+// This is the main file for animate.scss. All partials and helpers will
+// be pulled into this file by the code below. If you want to decrease
+// the size of this file you can comment out sections below, but remember
+// that due to the nature of mixins it won't hurt your actual performance
+// to leave it all in here!
+//
+// So, without further ado, let's get started!
+//-----------------------------------------------------------------------//
+
+//-----------------------------------------------------------------------//
+// VARIABLES
+//
+// First, we'll set up some sensible defaults for the helper functions.
+// These are prefixed global- to separate them from the variables used
+// in each mixin.
+//-----------------------------------------------------------------------//
+
+$global-duration: 		1s 		!default;
+$global-function: 		ease 	!default;
+$global-delay: 			.2s 	!default;
+$global-count:			1 		!default;
+$global-fill: 			both 	!default;
+$global-visibility: 	hidden 	!default;
+
+$prefixes: (webkit moz ms o spec);
+
+$prefix-for-webkit:		true !default;
+$prefix-for-mozilla:	true !default;
+$prefix-for-microsoft:	true !default;
+$prefix-for-opera:		true !default;
+$prefix-for-spec:		true !default; // required for keyframe mixin
+
+//-----------------------------------------------------------------------//
+// HELPERS
+// These are functions that are called from the mixins to setup stuff
+// like duration, fill-mode etc.
+//-----------------------------------------------------------------------//
+
+@import "partials/helpers";
+
+// There's a small bug in webkit that requires a CSS3 property to be set on an element.
+// Read more about it at http://bit.ly/NEdoDq
+body {
+	-webkit-backface-visibility: hidden;
+}
+
+//-----------------------------------------------------------------------//
+// NUTS 'N BOLTS
+// These are the partials that contain the actual mixins.
+//-----------------------------------------------------------------------//
+
+@import "partials/bounce";
+
+@import "partials/bounceIn";
+@import "partials/bounceInDown";
+@import "partials/bounceInLeft";
+@import "partials/bounceInRight";
+@import "partials/bounceInUp";
+
+@import "partials/bounceOut";
+@import "partials/bounceOutDown";
+@import "partials/bounceOutLeft";
+@import "partials/bounceOutRight";
+@import "partials/bounceOutUp";
+
+@import "partials/fadeIn";
+@import "partials/fadeInDown";
+@import "partials/fadeInDownBig";
+@import "partials/fadeInLeft";
+@import "partials/fadeInLeftBig";
+@import "partials/fadeInRight";
+@import "partials/fadeInRightBig";
+@import "partials/fadeInUp";
+@import "partials/fadeInUpBig";
+
+@import "partials/fadeOut";
+@import "partials/fadeOutDown";
+@import "partials/fadeOutDownBig";
+@import "partials/fadeOutUp";
+@import "partials/fadeOutUpBig";
+@import "partials/fadeOutLeft";
+@import "partials/fadeOutLeftBig";
+@import "partials/fadeOutRight";
+@import "partials/fadeOutRightBig";
+
+@import "partials/flip";
+
+@import "partials/flipInX";
+@import "partials/flipInY";
+@import "partials/flipOutX";
+@import "partials/flipOutY";
+
+@import "partials/hingeLeft";
+@import "partials/hingeRight";
+
+@import "partials/lightSpeedIn";
+@import "partials/lightSpeedOut";
+
+@import "partials/pulse";
+
+@import "partials/rollIn";
+@import "partials/rollOut";
+
+@import "partials/rotateIn";
+@import "partials/rotateInDownLeft";
+@import "partials/rotateInDownRight";
+@import "partials/rotateInUpLeft";
+@import "partials/rotateInUpRight";
+
+@import "partials/rotateOut";
+@import "partials/rotateOutDownLeft";
+@import "partials/rotateOutDownRight";
+@import "partials/rotateOutUpLeft";
+@import "partials/rotateOutUpRight";
+
+@import "partials/slideInDown";
+@import "partials/slideInLeft";
+@import "partials/slideInRight";
+@import "partials/slideInUp";
+
+@import "partials/slideOutDown";
+@import "partials/slideOutLeft";
+@import "partials/slideOutRight";
+@import "partials/slideOutUp";
+
+@import "partials/shake";
+@import "partials/swing";
+@import "partials/tada";
+@import "partials/wiggle";
+@import "partials/wobble";

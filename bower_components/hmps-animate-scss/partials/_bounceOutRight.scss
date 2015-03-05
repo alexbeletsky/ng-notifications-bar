@@ -1,0 +1,20 @@
+@mixin bounceOutRight($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(bounceOutRight $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(bounceOutRight) {
+			0% {
+				@include transform(translateX(0));
+			}
+			20% {
+				opacity: 1;
+				@include transform(translateX(-20px));
+			}
+			100% {
+				opacity: 0;
+				@include transform(translateX(2000px));
+			}
+		}
+	}
+}

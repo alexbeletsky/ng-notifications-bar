@@ -1,0 +1,17 @@
+@mixin fadeInRight($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(fadeInRight $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(fadeInRight) {
+			0% {
+				opacity: 0;
+				@include transform(translateX(20px));
+			}
+			100% {
+				opacity: 1;
+				@include transform(translateX(0));
+			}
+		}
+	}
+}

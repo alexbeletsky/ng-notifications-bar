@@ -1,0 +1,24 @@
+@mixin tada($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(tada $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(tada) {
+			0% {
+				@include transform(scale(1));
+			}
+			10%, 20% {
+				@include transform(scale(0.9) rotate(-3deg));
+			}
+			30%, 50%, 70%, 90% {
+				@include transform(scale(1.1) rotate(3deg));
+			}
+			40%, 60%, 80% {
+				@include transform(scale(1.1) rotate(-3deg));
+			}
+			100% {
+				@include transform(scale(1) rotate(0));
+			}
+		}
+	}
+}

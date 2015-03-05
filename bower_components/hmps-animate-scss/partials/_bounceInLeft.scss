@@ -1,0 +1,23 @@
+@mixin bounceInLeft($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(bounceInLeft $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(bounceInLeft) {
+			0% {
+				opacity: 0;
+				@include transform(translateX(-2000px));
+			}
+			60% {
+				opacity: 1;
+				@include transform(translateX(30px));
+			}
+			80% {
+				@include transform(translateX(-10px));
+			}
+			100% {
+				@include transform(translateX(0));
+			}
+		}
+	}
+}

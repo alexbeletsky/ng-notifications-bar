@@ -1,0 +1,17 @@
+@mixin fadeOutUp($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(fadeOutUp $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(fadeOutUp) {
+			0% {
+				opacity: 1;
+				@include transform(translateY(0));
+			}
+			100% {
+				opacity: 0;
+				@include transform(translateY(-20px));
+			}
+		}
+	}
+}
