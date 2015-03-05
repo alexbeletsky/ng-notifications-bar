@@ -67,7 +67,7 @@ module.exports = function (grunt) {
 		},
 		shell: {
 			deploy: {
-				command: 'git subtree push --prefix example origin gh-pages'
+				command: 'git push origin `git subtree split --prefix example master`:gh-pages --force'
 			}
 		},
 		wiredep: {
