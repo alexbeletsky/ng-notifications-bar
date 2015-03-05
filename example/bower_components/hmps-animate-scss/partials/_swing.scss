@@ -1,0 +1,25 @@
+@mixin swing($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(swing $duration $function $delay $count $fill);
+	@include transform-origin(top center);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(swing) {
+			20% {
+				@include transform(rotate(15deg));
+			}
+			40% {
+				@include transform(rotate(-10deg));
+			}
+			60% {
+				@include transform(rotate(5deg));
+			}
+			80% {
+				@include transform(rotate(-5deg));
+			}
+			100% {
+				@include transform(rotate(0deg));
+			}
+		}
+	}
+}

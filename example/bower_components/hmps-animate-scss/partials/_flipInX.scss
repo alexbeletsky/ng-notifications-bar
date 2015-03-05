@@ -1,0 +1,25 @@
+@mixin flipInX($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(flipInX $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(flipInX) {
+			0% {
+				@include transform(perspective(400px) rotateX(90deg));
+				opacity: 0;
+			}
+			40% {
+				@include transform(perspective(400px) rotateX(-10deg));
+				animation-timing-function: ease-out;
+			}
+			70% {
+				@include transform(perspective(400px) rotateX(10deg));
+				animation-timing-function: ease-in;
+				opacity: 1;
+			}
+			100% {
+				@include transform(perspective(400px) rotateX(0deg));
+			}
+		}
+	}
+}

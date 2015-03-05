@@ -76,6 +76,15 @@ module.exports = function (grunt) {
 					'example/*.html',
 				]
 			}
+		},
+		copy: {
+			main: {
+				files: [
+					{expand: true, src: ['bower_components/**'], dest: 'example/'},
+					{expand: true, src: ['fonts/**'], dest: 'example/'},
+					{expand: true, src: ['dist/**'], dest: 'example/'},
+				]
+			}
 		}
 	});
 
@@ -87,12 +96,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask('sass', ['compass', 'cssmin']);
-	grunt.registerTask('build', ['uglify', 'compass', 'cssmin', 'wiredep']);
+	grunt.registerTask('build', ['uglify', 'compass', 'cssmin', 'wiredep', 'copy']);
 	grunt.registerTask('deploy', ['build', 'shell']);
 
-	grunt.registerTask('start:example', ['connect', 'watch']);
+	grunt.registerTask('start:example', ['build', 'connect', 'watch']);
 
 	grunt.registerTask('default', ['build']);
 

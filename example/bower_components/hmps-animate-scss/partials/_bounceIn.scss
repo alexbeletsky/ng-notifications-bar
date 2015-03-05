@@ -1,0 +1,23 @@
+@mixin bounceIn($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(bounceIn $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(bounceIn) {
+				0% {
+						opacity: 0;
+						@include transform(scale(.3));
+				}
+				50% {
+						opacity: 1;
+						@include transform(scale(1.05));
+				}
+				70% {
+						@include transform(scale(.9));
+				}
+				100% {
+						@include transform(scale(1));
+				}
+		}
+	}
+}

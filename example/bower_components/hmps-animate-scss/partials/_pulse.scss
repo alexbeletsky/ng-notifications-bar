@@ -1,0 +1,18 @@
+@mixin pulse($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
+	@include animation(pulse $duration $function $delay $count $fill);
+	@include visibility($visibility);
+
+	@at-root {
+		@include keyframes(pulse) {
+			0% {
+				@include transform(scale(1));
+			}
+			50% {
+				@include transform(scale(1.1));
+			}
+			100% {
+				@include transform(scale(1));
+			}
+		}
+	}
+}
