@@ -18,4 +18,7 @@ app.controller('main', function ($scope, notifications) {
 		notifications.showSuccess('Congrats! Life is great!');
 	};
 
+	$scope.closeAll = function () {
+		notifications.closeAll();
+	};
 });

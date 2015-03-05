@@ -71,10 +71,15 @@
 			$rootScope.$broadcast('notifications:success', message);
 		};
 
+		var closeAll = function () {
+			$rootScope.$broadcast('notifications:closeAll');
+		};
+
 		return {
 			showError: showError,
 			showWarning: showWarning,
-			showSuccess: showSuccess
+			showSuccess: showSuccess,
+			closeAll: closeAll
 		};
 	}]);
 
@@ -152,6 +157,10 @@
 				scope.$on('notifications:success', function (event, data) {
 					notificationHandler(event, data, 'success');
 				});
+
+				scope.$on('notifications:closeAll', function () {
+					notifications.length = 0;
+				})
 
 				scope.close = function (index) {
 					notifications.splice(index, 1);
