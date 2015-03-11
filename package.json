@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexanderbeletsky/ng-notifications-bar.git"
+    "url": "https://github.com/alexbeletsky/ng-notifications-bar.git"
   },
   "keywords": [
     "angular",
@@ -23,11 +23,13 @@
   "author": "alexander.beletsky@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexanderbeletsky/ng-notifications-bar/issues"
+    "url": "https://github.com/alexbeletsky/ng-notifications-bar/issues"
   },
-  "homepage": "https://github.com/alexanderbeletsky/ng-notifications-bar",
+  "homepage": "http://beletsky.net/ng-notifications-bar/",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-shell": "^1.1.1",
+    "grunt-wiredep": "^2.0.0",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-connect": "^0.8.0",
     "grunt-contrib-copy": "^0.8.0",
@@ -35,9 +37,5 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1"
-  },
-  "dependencies": {
-    "grunt-shell": "^1.1.1",
-    "grunt-wiredep": "^2.0.0"
   }
 }
