@@ -136,7 +136,7 @@
 						message = data;
 					}
 
-					var id = 'notif_' + (Math.floor(Math.random() * 128));
+					var id = 'notif_' + (new Date()).getTime();
 					notifications.push({id: id, type: type, message: message});
 					if (hide) {
 						var timer = $timeout(function () {
