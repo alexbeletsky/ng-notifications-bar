@@ -88,7 +88,7 @@
 			restrict: 'EA',
 			template: function(elem, attr){
 				var acceptHTML = notificationsConfig.getAcceptHTML() || false;
-				var iconClasses = attr.iconclasses || 'glyphicon glyphicon-remove close-click';
+				var iconClasses = attr.closeicon || 'glyphicon glyphicon-remove close-click';
 				return acceptHTML ? '\
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications">\
