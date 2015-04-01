@@ -81,7 +81,6 @@ module.exports = function (grunt) {
 			main: {
 				files: [
 					{expand: true, src: ['bower_components/**'], dest: 'example/'},
-					{expand: true, src: ['fonts/**'], dest: 'example/'},
 					{expand: true, src: ['dist/**'], dest: 'example/'},
 				]
 			}
