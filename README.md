@@ -1,6 +1,6 @@
 # ng-notifications-bar
 
-[Angular.js](https://angularjs.org/), [Animate.css](http://daneden.github.io/animate.css), [Glyphicons](http://glyphicons.com/), based component for stylish and flexible application notifications.
+[Angular.js](https://angularjs.org/) and [Animate.css](http://daneden.github.io/animate.css) based component for stylish and flexible application notifications.
 
 [Demo](http://beletsky.net/ng-notifications-bar)
 
@@ -56,7 +56,7 @@ In application module,
 angular.module('app', ['ngNotificationsBar', 'ngSanitize']);
 ```
 
-Please **note**, since `ng-notifications-bar` have a dependency on `glyphicons` you have to copy `/fonts` folder into yours `/public` folder manually. Also `ngSanitize` can be omitted if HTML support isn't needed.
+`ngSanitize` can be omitted if HTML support isn't needed.
 
 ## API
 
@@ -69,6 +69,14 @@ The module consists of there elements - directive, service and provider.
 ```html
 <notifications-bar class="notifications"></notifications-bar>
 ```
+
+If you are using a icon library besides Glyphicons for the close button (such as [Font Awesome](http://fontawesome.io)), include a `closeIcon` attribute.
+
+```html
+<notifications-bar class="notifications" closeIcon="fa fa-times-circle"></notifications-bar>
+```
+
+The default is the `glyphicon-remove` icon so don't forget to import Glyphicons if you aren't defining a `closeIcon` attribute.  
 
 Possible to use as attribute, as well
 
