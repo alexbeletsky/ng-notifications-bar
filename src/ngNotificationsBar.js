@@ -86,20 +86,21 @@
 	module.directive('notificationsBar', function (notificationsConfig, $timeout) {
 		return {
 			restrict: 'EA',
-			template: function(){
+			template: function(elem, attr){
 				var acceptHTML = notificationsConfig.getAcceptHTML() || false;
+				var iconClasses = attr.closeicon || 'glyphicon glyphicon-remove';
 				return acceptHTML ? '\
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications">\
 							<span class="message" ng-bind-html="note.message"></span>\
-							<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
+							<span class="' + iconClasses + '" ng-click="close($index)"></span>\
 						</div>\
 					</div>\
 				' : '\
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications">\
 							<span class="message" >{{note.message}}</span>\
-							<span class="glyphicon glyphicon-remove close-click" ng-click="close($index)"></span>\
+							<span class="' + iconClasses + ' close-click" ng-click="close($index)"></span>\
 						</div>\
 					</div>\
 				'
