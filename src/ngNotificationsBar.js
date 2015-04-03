@@ -93,7 +93,7 @@
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications">\
 							<span class="message" ng-bind-html="note.message"></span>\
-							<span class="' + iconClasses + '" ng-click="close($index)"></span>\
+							<span class="' + iconClasses + ' close-click" ng-click="close($index)"></span>\
 						</div>\
 					</div>\
 				' : '\
