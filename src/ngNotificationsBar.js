@@ -83,7 +83,7 @@
 		};
 	}]);
 
-	module.directive('notificationsBar', function (notificationsConfig, $timeout) {
+	module.directive('notificationsBar', ['notificationsConfig', '$timeout', function (notificationsConfig, $timeout) {
 		return {
 			restrict: 'EA',
 			template: function(elem, attr){
@@ -168,7 +168,7 @@
 				};
 			}
 		};
-	});
+	}]);
 
 	return module;
 }));
