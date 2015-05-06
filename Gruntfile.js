@@ -104,5 +104,4 @@ module.exports = function (grunt) {
 	grunt.registerTask('start:example', ['build', 'connect', 'watch']);
 
 	grunt.registerTask('default', ['build']);
-
 };
