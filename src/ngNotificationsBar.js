@@ -34,6 +34,14 @@
 		function setAutoHide(value){
 			config.autoHide = value;
 		}
+		
+		function setAutoHideAnimation(value){
+			config.autoHideAnimation = value;
+		}
+		
+		function getAutoHideAnimation(){
+			return config.autoHideAnimation;
+		}
 
 		function getAutoHide(){
 			return config.autoHide;
@@ -43,6 +51,8 @@
 			setHideDelay: setHideDelay,
 
 			setAutoHide: setAutoHide,
+			
+			setAutoHideAnimation: setAutoHideAnimation,
 
 			setAcceptHTML: setAcceptHTML,
 
@@ -51,6 +61,8 @@
 					getHideDelay: getHideDelay,
 
 					getAutoHide: getAutoHide,
+					
+					getAutoHideAnimation: getAutoHideAnimation,
 
 					getAcceptHTML: getAcceptHTML
 				};
@@ -91,14 +103,14 @@
 				var iconClasses = attr.closeicon || 'glyphicon glyphicon-remove';
 				return acceptHTML ? '\
 					<div class="notifications-container" ng-if="notifications.length">\
-						<div class="{{note.type}}" ng-repeat="note in notifications">\
+						<div class="{{note.type}}" ng-repeat="note in notifications" ng-class="note.animation">\
 							<span class="message" ng-bind-html="note.message"></span>\
 							<span class="' + iconClasses + ' close-click" ng-click="close($index)"></span>\
 						</div>\
 					</div>\
 				' : '\
 					<div class="notifications-container" ng-if="notifications.length">\
-						<div class="{{note.type}}" ng-repeat="note in notifications">\
+						<div class="{{note.type}}" ng-repeat="note in notifications" ng-class="note.animation">\
 							<span class="message" >{{note.message}}</span>\
 							<span class="' + iconClasses + ' close-click" ng-click="close($index)"></span>\
 						</div>\
@@ -118,15 +130,19 @@
 					notifications.forEach(function (el, index) {
 						if (el.id === id) {
 							found = index;
+							el.animation = {Object.keys(el.animation)[0]: true};
+							scope.$apply();
 						}
 					});
 
 					if (found >= 0) {
-						notifications.splice(found, 1);
+						$timeout(function(){
+							notifications.splice(found, 1);
+						}, 1200);
 					}
 				};
 
-				var notificationHandler = function (event, data, type) {
+				var notificationHandler = function (event, data, type, animation) {
 					var message, hide = autoHide, hideDelay = autoHideDelay;
 
 					if (typeof data === 'object') {
@@ -138,7 +154,7 @@
 					}
 
 					var id = 'notif_' + (new Date()).getTime();
-					notifications.push({id: id, type: type, message: message});
+					notifications.push({id: id, type: type, message: message, animation: animation});
 					if (hide) {
 						var timer = $timeout(function () {
 							removeById(id);
