@@ -42,6 +42,14 @@
 		function getAutoHideAnimation(){
 			return config.autoHideAnimation;
 		}
+		
+		function setAutoHideAnimationDelay(value){
+			config.autoHideAnimationDelay = value;
+		}
+		
+		function getAutoHideAnimationDelay(){
+			return config.autoHideAnimationDelay;
+		}
 
 		function getAutoHide(){
 			return config.autoHide;
@@ -53,6 +61,8 @@
 			setAutoHide: setAutoHide,
 			
 			setAutoHideAnimation: setAutoHideAnimation,
+			
+			setAutoHideAnimationDelay: setAutoHideAnimationDelay,
 
 			setAcceptHTML: setAcceptHTML,
 
@@ -63,6 +73,8 @@
 					getAutoHide: getAutoHide,
 					
 					getAutoHideAnimation: getAutoHideAnimation,
+					
+					getAutoHideAnimationDelay: getAutoHideAnimationDelay,
 
 					getAcceptHTML: getAcceptHTML
 				};
@@ -123,6 +135,8 @@
 				var timers = [];
 				var autoHideDelay = notificationsConfig.getHideDelay() || 3000;
 				var autoHide = notificationsConfig.getAutoHide() || false;
+				var autoHideAnimation = notificationsConfig.getAutoHideAnimation() || '';
+				var autoHideAnimationDelay = notificationsConfig.getAutoHideAnimationDelay() || 1200;
 
 				var removeById = function (id) {
 					var found = -1;
@@ -130,7 +144,10 @@
 					notifications.forEach(function (el, index) {
 						if (el.id === id) {
 							found = index;
-							el.animation = {Object.keys(el.animation)[0]: true};
+							
+							el.animation = {};
+							el.animation[autoHideAnimation] = true;
+							
 							scope.$apply();
 						}
 					});
@@ -138,7 +155,7 @@
 					if (found >= 0) {
 						$timeout(function(){
 							notifications.splice(found, 1);
-						}, 1200);
+						}, autoHideAnimationDelay);
 					}
 				};
 

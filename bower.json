@@ -1,9 +1,10 @@
 {
   "name": "ng-notifications-bar",
   "version": "0.0.1",
-  "homepage": "https://github.com/alexbeletsky/ng-notifications-bar",
+  "homepage": "https://github.com/ascension/ng-notifications-bar",
   "authors": [
-    "alexanderbeletsky <alexander.beletsky@gmail.com>"
+    "alexanderbeletsky <alexander.beletsky@gmail.com>",
+    "ascension <jerroddb@gmail.com>"
   ],
   "description": "Angular.js component for stylish and flexible application notifications.",
   "main": ["dist/ngNotificationsBar.min.js", "dist/ngNotificationsBar.min.css"],
