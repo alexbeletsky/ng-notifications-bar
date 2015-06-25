@@ -14,7 +14,7 @@ body {
   z-index: 1000;
 }
 /* line 14, ../sass/ngNotificationsBar.scss */
-.notifications .notification, .notifications .error, .notifications .success, .notifications .warning,  .notifications .info{
+.notifications .notification, .notifications .error, .notifications .success, .notifications .warning, .notifications .info {
   position: relative;
   -webkit-animation: fadeInDown 1s ease 0.2s 1 both;
   -moz-animation: fadeInDown 1s ease 0.2s 1 both;
@@ -91,8 +91,8 @@ body {
 }
 /* line 44, ../sass/ngNotificationsBar.scss */
 .notifications .info {
-	background-color: #e6f0f4;
-	border-bottom: 1px solid #0c6997;
+  background-color: #0c6997;
+  border-bottom: 1px solid #0c6997;
 }
 /* line 50, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
