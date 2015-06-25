@@ -90,6 +90,10 @@
 		var showWarning = function (message) {
 			$rootScope.$broadcast('notifications:warning', message);
 		};
+		
+		var showInfo = function (message) {
+			$rootScope.$broadcast('notifications:info', message);
+		};
 
 		var showSuccess = function (message) {
 			$rootScope.$broadcast('notifications:success', message);
@@ -101,6 +105,7 @@
 
 		return {
 			showError: showError,
+			showInfo: showInfo,
 			showWarning: showWarning,
 			showSuccess: showSuccess,
 			closeAll: closeAll
@@ -186,6 +191,10 @@
 
 				scope.$on('notifications:warning', function (event, data) {
 					notificationHandler(event, data, 'warning');
+				});
+				
+				scope.$on('notifications:info', function (event, data) {
+					notificationHandler(event, data, 'info');
 				});
 
 				scope.$on('notifications:success', function (event, data) {

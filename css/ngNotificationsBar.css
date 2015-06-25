@@ -90,6 +90,11 @@ body {
   border-bottom: 1px solid #e7ba08;
 }
 /* line 44, ../sass/ngNotificationsBar.scss */
+.notifications .info {
+	background-color: #e6f0f4;
+	border-bottom: 1px solid #0c6997;
+}
+/* line 50, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
   font-size: 12px;
   cursor: pointer;
