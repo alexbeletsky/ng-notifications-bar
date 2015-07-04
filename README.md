@@ -33,7 +33,7 @@ Update your scripts and styles section or use the require for browserified appli
 ```html
 <link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script scr="bower_components/angular-notifications-bar/dist/ng-notifications-bar.min.js"></script>
+<script src="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
 ```
 
 If you use Grunt, `wiredep` should inject the required `angular-sanitize.js` for you.
