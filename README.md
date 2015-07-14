@@ -130,6 +130,8 @@ Available options:
 - autoHide
 - hideDelay
 - acceptHTML
+- autoHideAnimation
+- autoHideAniationDelay
 
 Please **note**, HTML support is only configurable at a global level. If HTML is to be supported, make sure to inject the `'ngSanitize'` dependency.
 
@@ -150,6 +152,13 @@ app.config(['notificationsConfigProvider'], function (notificationsConfigProvide
 
 	// support HTML
 	notificationsConfigProvider.setAcceptHTML(false);
+	
+	// Set an animation for hiding the notification
+	notificationsConfigProvider.setAutoHideAnimation('fadeOutNotifications');
+	
+	// delay between animation and removing the nofitication
+	notificationsConfigProvider.setAutoHideAnimationDelay(1200);
+	
 }])
 ```
 

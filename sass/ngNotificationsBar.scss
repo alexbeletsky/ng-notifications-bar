@@ -40,6 +40,12 @@
 		background-color: #F7CA18;
 		border-bottom: 1px solid #e7ba08;
 	}
+	
+	.info {
+		@extend .notification;
+		background-color: #0c6997;
+		border-bottom: 1px solid #0c6997;
+	}
 
 	.close-click {
 		font-size: 12px;
