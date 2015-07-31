@@ -113,7 +113,7 @@ app.controllers('app', function ($scope, api, notifications) {
 `notificationsConfigProvider` is used to override some notifications bar defaults.
 
 ```js
-app.config(['notificationsConfigProvider'], function (notificationsConfigProvider) {
+app.config(['notificationsConfigProvider', function (notificationsConfigProvider) {
 	// auto hide
 	notificationsConfigProvider.setAutoHide(true)
 
