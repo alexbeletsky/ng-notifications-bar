@@ -96,7 +96,7 @@ body {
 }
 /* line 50, ../sass/ngNotificationsBar.scss */
 .notifications .close-click {
-  font-size: 12px;
+  font-size: inherit;
   cursor: pointer;
   padding: 10px;
   margin: 0 auto;
